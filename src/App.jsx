@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "./App.css";
 import Blogs from "./components/Blogs/Blogs";
@@ -8,7 +9,9 @@ function App() {
   const [bookMarks,setBookMarks]= useState([]);
 
   const hendaleBookMarks = blog=>{
-    console.log('book mark')
+    const newBookMarks = [...bookMarks,blog];
+    setBookMarks(newBookMarks);
+     
   }
   return (
     <>
@@ -16,7 +19,7 @@ function App() {
       <Header />
       <div className="md:flex max-w-7xl mx-auto p-4">
         <Blogs hendaleBookMarks={hendaleBookMarks} />
-        <BookMarks/>
+        <BookMarks bookMarks={bookMarks}/>
 
       </div>
    

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaBeer,FaBookmark } from 'react-icons/fa';
 import PropTypes from "prop-types";
 
@@ -19,7 +20,7 @@ const Blog = ({ blog, hendaleBookMarks }) => {
           <span>{reading_time} min Read</span>
           <button 
           
-          onClick={hendaleBookMarks}
+          onClick={()=>hendaleBookMarks(blog)}
           className='ml-2 text-2xl text-red-400'><FaBookmark> </FaBookmark></button>
         </div>
       </div>
