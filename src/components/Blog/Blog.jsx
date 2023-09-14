@@ -2,13 +2,13 @@
 import { FaBeer,FaBookmark } from 'react-icons/fa';
 import PropTypes from "prop-types";
 
-const Blog = ({ blog, hendaleBookMarks }) => {
+const Blog = ({ blog, hendaleBookMarks,heandaleMarkasRead }) => {
   const { title, cover, reading_time, author_img, posted_date, author,hashtags } = blog;
 
   return (
-    <div className="my-20">
+    <div className="my-20 space-y-4">
       <img className="w-full mb-8 rounded-xl" src={cover} alt={title} />
-      <div className="flex justify-between">
+      <div className="flex justify-between mb-4 ">
         <div className="flex ">
           <img className="w-14" src={author_img} alt="" />
           <div className="ml-6">
@@ -34,6 +34,7 @@ const Blog = ({ blog, hendaleBookMarks }) => {
             })
         }
       </p>
+      <button className='text-purple-900 font-bold underline' onClick={()=>heandaleMarkasRead(reading_time)}>Mark as Read</button>
     </div>
   );
 };
