@@ -3,7 +3,7 @@ import { FaBeer,FaBookmark } from 'react-icons/fa';
 import PropTypes from "prop-types";
 
 const Blog = ({ blog, hendaleBookMarks,heandaleMarkasRead }) => {
-  const { title, cover, reading_time, author_img, posted_date, author,hashtags } = blog;
+  const { title, cover, reading_time, author_img, posted_date, author,hashtags,id } = blog;
 
   return (
     <div className="my-20 space-y-4">
@@ -34,7 +34,7 @@ const Blog = ({ blog, hendaleBookMarks,heandaleMarkasRead }) => {
             })
         }
       </p>
-      <button className='text-purple-900 font-bold underline' onClick={()=>heandaleMarkasRead(reading_time)}>Mark as Read</button>
+      <button className='text-purple-900 font-bold underline' onClick={()=>heandaleMarkasRead(reading_time ,id)}>Mark as Read</button>
     </div>
   );
 };

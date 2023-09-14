@@ -14,9 +14,10 @@ function App() {
     const newBookMarks = [...bookMarks,blog];
     setBookMarks(newBookMarks);
   }
-const heandaleMarkasRead = time => {
+const heandaleMarkasRead = (time,id) => {
     setReadingTime(reading_time+time);
-
+    const remainigBookMarks = bookMarks.filter(bookMarks => bookMarks.id != id);
+    setBookMarks(remainigBookMarks);
 
 }
   
